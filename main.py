@@ -6,11 +6,8 @@ import torch
 import gc
 
 def clear_gpu_memory():
-    """
-    Clears GPU memory by deleting unused variables and invoking garbage collection.
-    """
-    torch.cuda.empty_cache()  # Free up unused GPU memory
-    gc.collect()              # Force garbage collection to release CPU memory
+    torch.cuda.empty_cache()  
+    gc.collect()              
     print("GPU memory cleared.")
 
 get_daily_email()
