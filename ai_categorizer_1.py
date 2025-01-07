@@ -4,9 +4,7 @@ import re
 import sys
 
 def extract_main_content_batch(email_bodies, generator):
-    """
-    Processes a batch of email bodies with the generator.
-    """
+    
     prompts = [
         (
             "The following is an email body with a lot of noise, including HTML tags, weird elements, greetings, "
@@ -16,13 +14,14 @@ def extract_main_content_batch(email_bodies, generator):
         )
         for email_body in email_bodies
     ]
+
     responses = generator(prompts, max_new_tokens=2, temperature=0.4)
-    return [response['generated_text'] for response in responses]
+
+    flat_responses = [response['generated_text'] for batch in responses for response in batch]
+    return flat_responses
 
 def categorize_1(batch_size=4):
-    """
-    Categorizes emails in batches to determine if they are related to an internship application.
-    """
+    
     print("First categorization phase starting...")
     df = pd.read_csv('mails.csv')
     df['Internship?'] = None
@@ -45,12 +44,11 @@ def categorize_1(batch_size=4):
         
         print(f"Processed batch {i // batch_size + 1}/{(num_emails + batch_size - 1) // batch_size}")
 
-    # Update the DataFrame with results
     df['Internship?'] = results
 
-    # Check if any emails are related to internships
     internship_emails_count = sum(1 for result in results if result == "Yes")
     if internship_emails_count == 0:
+        df.to_csv('mails.csv', index=False)
         print("No emails received about internship")
         sys.exit()
 
