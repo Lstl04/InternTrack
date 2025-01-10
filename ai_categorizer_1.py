@@ -25,7 +25,7 @@ def categorize_1(batch_size=4):
     print("First categorization phase starting...")
     df = pd.read_csv('mails.csv')
     df['Internship?'] = None
-    generator = pipeline("text-generation", model="unsloth/Llama-3.2-3B-Instruct", device=0)
+    generator = pipeline("text-generation", model="google-bert/bert-base-uncased", device=0)
 
     email_bodies = df['Body'].tolist()
     num_emails = len(email_bodies)
