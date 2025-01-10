@@ -21,11 +21,11 @@ Easily add a new application to your Excel tracker with relevant details such as
 ### 2. Fetch and Process Emails
 Automatically fetch emails from the past 24 hours and:
 - Identify emails related to internship applications.
-- Extract the application status:
+- Use Bert as a judge to extract the application status:
   - **1:** Confirmation (process started or ongoing)
   - **2:** Positive response (offer or interview)
   - **3:** Negative response (rejection)
-- Determine the company name based on email content.
+- Use of Bert to determine the company name based on email content.
 
 ### 3. Update Application Tracker
 Update your Excel tracker with:
