@@ -22,7 +22,7 @@ def categorize_3(batch_size=4):
     print("Defining company phase starting...")
     df = pd.read_csv('mails.csv')
     df['Company name'] = None
-    generator = pipeline("text-generation", model="unsloth/Llama-3.2-3B-Instruct", device=0)
+    generator = pipeline("text-generation", model="google-bert/bert-base-uncased", device=0)
 
     email_bodies = df.loc[df["Internship?"] == "Yes", "Body"].tolist()
     email_indices = df.loc[df["Internship?"] == "Yes"].index
