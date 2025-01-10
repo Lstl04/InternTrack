@@ -1,0 +1,6 @@
+pandas
+openpyxl
+transformers
+beautifulsoup4
+imaplib
+email
