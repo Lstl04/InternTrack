@@ -11,8 +11,8 @@ from bs4 import BeautifulSoup
 
 
 def get_daily_email():
-    EMAIL_ACCOUNT = "staletlouis@gmail.com"
-    EMAIL_PASSWORD = "wsag euka ndxn idiu"
+    EMAIL_ACCOUNT = "EMAIL"
+    EMAIL_PASSWORD = "PASSWORD"
 
     mail = imaplib.IMAP4_SSL('imap.gmail.com')
     mail.login(EMAIL_ACCOUNT, EMAIL_PASSWORD)
