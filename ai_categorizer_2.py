@@ -26,7 +26,7 @@ def categorize_2(batch_size=4):
     print("Second categorization phase starting...")
     df = pd.read_csv('mails.csv')
     df['Application progress'] = None
-    generator = pipeline("text-generation", model="unsloth/Llama-3.2-3B-Instruct", device=0)
+    generator = pipeline("text-generation", model="google-bert/bert-base-uncased", device=0)
 
     email_bodies = df.loc[df["Internship?"] == "Yes", "Body"].tolist()
     email_indices = df.loc[df["Internship?"] == "Yes"].index
