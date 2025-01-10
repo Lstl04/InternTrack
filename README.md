@@ -35,7 +35,6 @@ Update your Excel tracker with:
 
 ### 4. Recurring Daily Checks
 Automate the email-fetching and tracker-updating process to run daily at 8 AM. You can use Task Scheduler on Windows, or Cron Job on Linux/macOs and call: 
-main.py daily_check.
 ```bash
 main.py daily_check.
 ```
