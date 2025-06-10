@@ -3,7 +3,7 @@ from datetime import datetime
 from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
 
-application_file = r"C:\Users\louis\Documents\Intership_application.xlsx"
+application_file = r"path/to/exce/file"
 
 def add_application():
     company = input("What company did you apply to: ")
