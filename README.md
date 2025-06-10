@@ -2,7 +2,7 @@
 
 The **Internship Application Manager** is a Python-based tool that simplifies tracking internship applications and categorizing email responses automatically. It includes features for:
 - Adding internship applications to a tracker.
-- Fetching emails and categorizing responses using LLMs (positive, negative, or neutral).
+- Fetching emails and categorizing responses using LLMs and sentiment analysis (positive, negative, or neutral).
 - Automatically updating your Excel tracker with the latest email responses.
 - Automating recurring daily checks for email updates.
 
