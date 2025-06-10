@@ -4,7 +4,7 @@ from openpyxl.styles import PatternFill
 
 def updating():
     received_mails = pd.read_csv("mails.csv")
-    applications = r"C:\Users\louis\Documents\Intership_application.xlsx"
+    applications = r"path/to/excel/file"
     filtered_rows = received_mails[received_mails["Internship?"] == "Yes"]
     emails_data = filtered_rows[["Company name", "Application progress"]]
     
